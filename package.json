@@ -1,0 +1,29 @@
+{
+  "name": "gabecollection.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabeCollection/gabecollection.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabeCollection/gabecollection.github.io/issues"
+  },
+  "homepage": "https://github.com/GabeCollection/gabecollection.github.io#readme",
+  "dependencies": {
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
