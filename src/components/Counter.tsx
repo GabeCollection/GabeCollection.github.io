@@ -15,7 +15,7 @@ export class Counter extends React.Component<CounterProps, CounterState> {
   }
 
   componentDidMount() {
-    setInterval(this.increase, 1)
+    setInterval(this.increase, 1000)
   }
 
   increase = () => {

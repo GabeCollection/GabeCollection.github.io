@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: 'production',
@@ -19,26 +18,11 @@ module.exports = {
         exclude: "/node_modules",
         loader: 'ts-loader',
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true },
-          },
-        ],
-      },
     ],
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: './public/index.html',
-      filename: 'index.html',
-    }),
-  ],
   devServer: {
-    contentBase: './build',
-    index: './index.html',
+    contentBase: './',
+    publicPath: '/build',
     port: 3000,
   },
 };
