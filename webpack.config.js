@@ -1,5 +1,3 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-
 module.exports = {
   mode: 'production',
   entry: './src/index.tsx',
@@ -24,11 +22,5 @@ module.exports = {
     contentBase: './dist',
     index: 'index.html',
     port: 3000,
-  },  
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: 'index.html',
-      filename: 'index.html',
-    })
-  ]
+  },
 };
