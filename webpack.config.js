@@ -1,9 +1,12 @@
+const path = require('path');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   mode: 'production',
   entry: './src/index.tsx',
   output: {
-    filename: 'main.js',
-    path: __dirname + '/dist'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname + '/build'),
   },
   devtool: 'source-map',
   resolve: {
@@ -16,11 +19,26 @@ module.exports = {
         exclude: "/node_modules",
         loader: 'ts-loader',
       },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: { minimize: true },
+          },
+        ],
+      },
     ],
   },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './public/index.html',
+      filename: 'index.html',
+    }),
+  ],
   devServer: {
-    contentBase: './dist',
-    index: 'index.html',
+    contentBase: './build',
+    index: './index.html',
     port: 3000,
   },
 };
