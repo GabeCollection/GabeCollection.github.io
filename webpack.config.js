@@ -1,5 +1,7 @@
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.tsx',
   output: {
     filename: 'main.js',
@@ -11,11 +13,22 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'ts-loader'},
+      { 
+        test: /\.tsx?$/,
+        exclude: "/node_modules",
+        loader: 'ts-loader',
+      },
     ],
   },
   devServer: {
-    contentBase: './',
-    publicPath: '/dist',
+    contentBase: './dist',
+    index: 'index.html',
+    port: 3000,
   },  
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: 'index.html',
+      filename: 'index.html',
+    })
+  ]
 };
