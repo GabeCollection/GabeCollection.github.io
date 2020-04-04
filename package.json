@@ -8,6 +8,11 @@
     "start": "webpack-dev-server --hot",
     "build": "webpack"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GabeCollection/gabecollection.github.io.git"
@@ -26,6 +31,7 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "husky": "^4.2.3",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
