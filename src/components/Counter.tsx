@@ -34,8 +34,3 @@ export class Counter extends React.Component<CounterProps, CounterState> {
     );
   }
 }
-
-// export const Counter: React.FC<CounterProps> = props => {
-//   const { name } = props;
-//   return <p>{name} counter</p>
-// }
